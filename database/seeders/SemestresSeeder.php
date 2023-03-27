@@ -35,10 +35,10 @@ class SemestresSeeder extends Seeder
             "semestre" => "Siete"
         ]);
         DB::table("semestres")->insert([
-            "semestre" => "Scho"
+            "semestre" => "Ocho"
         ]);
         DB::table("semestres")->insert([
-            "semestre" => "Sueve"
+            "semestre" => "Nueve"
         ]);
         DB::table("semestres")->insert([
             "semestre" => "Diez"

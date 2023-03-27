@@ -25,7 +25,7 @@
                         @foreach ($cursos as $curso)
                             <tr>
                                 <td>{{ $curso->id }}</td>
-                                <td>{{ $curso->semestres->semestre }}</td>
+                                <td>{{ $curso->id_semestre }}</td>
                                 <td>{{ $curso->curso }}</td>
                                 <td>
                                     <a href="{{ route('admin.cursos.edit', $curso) }}"

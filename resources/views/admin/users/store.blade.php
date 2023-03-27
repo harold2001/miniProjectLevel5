@@ -8,17 +8,22 @@
 
 @section('content')
     <div class="card">
+        @if (session('info'))
+            <div class="alert alert-success">
+                {{ session("info") }}
+            </div>
+        @endif
         <div class="card-body">
             {!! Form::model(['route' => ['admin.stored'], 'method' => 'put']) !!}
 
             {!! Form::label('name', 'Ingresa el nombre:', ['class' => 'form-label']) !!}
-            {!! Form::text('name', '', ['class' => 'form-control', "required"]) !!}
+            {!! Form::text('name', '', ['class' => 'form-control', 'required']) !!}
 
             {!! Form::label('email', 'Correo electrónico:', ['class' => 'form-label']) !!}
-            {!! Form::email('email', '', ['class' => 'form-control', "required"]) !!}
+            {!! Form::email('email', '', ['class' => 'form-control', 'required']) !!}
 
             {!! Form::label('password', 'Contraseña', ['class' => 'form-label']) !!}
-            {!! Form::password('password', ['class' => 'form-control', "required"]) !!}
+            {!! Form::password('password', ['class' => 'form-control', 'required']) !!}
 
             {!! Form::label('#', 'Selecciona un rol (opcional):', ['class' => 'form-label mb-0 mt-3']) !!}
             @foreach ($roles as $role)
@@ -29,7 +34,7 @@
                     </label>
                 </div>
             @endforeach
-            {!! Form::submit('Asignar rol', ['class' => 'btn btn-primary mt-2']) !!}
+            {!! Form::submit('Agregar usuario', ['class' => 'btn btn-primary mt-2']) !!}
             {!! Form::close() !!}
         </div>
     </div>
